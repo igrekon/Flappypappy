@@ -1,10 +1,10 @@
-package ru.innovationcampus.vsu26.igrekon.happy_flappy_bird;
+package screens;
 
 import com.badlogic.gdx.Game;
 import com.badlogic.gdx.graphics.OrthographicCamera;
-import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
-import com.badlogic.gdx.utils.ScreenUtils;
+
+import screens.ScreenGame;
 
 
 public class MyGdxGame extends Game {

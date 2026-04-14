@@ -1,8 +1,8 @@
-package ru.innovationcampus.vsu26.igrekon.happy_flappy_bird;
+package characters;
 
 
-import static ru.innovationcampus.vsu26.igrekon.happy_flappy_bird.MyGdxGame.SCR_HEIGHT;
-import static ru.innovationcampus.vsu26.igrekon.happy_flappy_bird.MyGdxGame.SCR_WIDTH;
+import static screens.MyGdxGame.SCR_HEIGHT;
+import static screens.MyGdxGame.SCR_WIDTH;
 
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.Batch;
@@ -36,16 +36,16 @@ public class Tube {
         x  = distanceBetweenTubes * tubeIdx + SCR_WIDTH;
     }
 
-    void draw(Batch batch){
+    public void draw(Batch batch){
         batch.draw(textureUpperTube, x, gapY + gapHeight /2, width, height);
         batch.draw(textureDownTube, x, gapY - gapHeight / 2 - height, width, height);
 
     }
-    void dispose(){
+    public void dispose(){
         textureDownTube.dispose();
         textureUpperTube.dispose();
     }
-    void  move(){
+    public void  move(){
         Random random = new Random();
         x-=speed;
         if (x < -width){

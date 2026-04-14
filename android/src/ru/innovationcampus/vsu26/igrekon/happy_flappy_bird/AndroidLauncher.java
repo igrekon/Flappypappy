@@ -4,7 +4,7 @@ import android.os.Bundle;
 
 import com.badlogic.gdx.backends.android.AndroidApplication;
 import com.badlogic.gdx.backends.android.AndroidApplicationConfiguration;
-import ru.innovationcampus.vsu26.igrekon.happy_flappy_bird.MyGdxGame;
+import screens.MyGdxGame;
 
 public class AndroidLauncher extends AndroidApplication {
 	@Override

@@ -1,15 +1,19 @@
-package ru.innovationcampus.vsu26.igrekon.happy_flappy_bird;
+package screens;
 
-import static ru.innovationcampus.vsu26.igrekon.happy_flappy_bird.MyGdxGame.SCR_HEIGHT;
-import static ru.innovationcampus.vsu26.igrekon.happy_flappy_bird.MyGdxGame.SCR_WIDTH;
+import static screens.MyGdxGame.SCR_HEIGHT;
+import static screens.MyGdxGame.SCR_WIDTH;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Screen;
-import com.badlogic.gdx.graphics.Texture;
-import com.badlogic.gdx.graphics.g2d.Batch;
 import com.badlogic.gdx.utils.ScreenUtils;
 
+import characters.Bird;
+import characters.Tube;
+import components.MovingBackground;
+import components.PointCounter;
+
 public class ScreenGame implements Screen {
+
 
     MyGdxGame myGdxGame;
     Bird bird;
@@ -41,7 +45,7 @@ public class ScreenGame implements Screen {
             tubes[i] = new Tube(tubeCount,i);
         }
         initTubes();
-        background = new MovingBackground();
+        background = new MovingBackground("~/StudioProjects/Flappypappy/assets");
 
         bird = new Bird(20,SCR_HEIGHT /2,10,250,200);
         pointCounter = new PointCounter(SCR_WIDTH - pointCounterMarginRight, SCR_HEIGHT - pointCounterMarginTop);
@@ -56,6 +60,9 @@ public class ScreenGame implements Screen {
 
     @Override
     public void render(float delta) {
+        ScreenUtils.clear(1,0,0,1);
+        myGdxGame.camera.update();
+        myGdxGame.batch.setProjectionMatrix(myGdxGame.camera.combined);
         if (Gdx.input.justTouched()) {
             bird.onClick();
 
